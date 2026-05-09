@@ -43,7 +43,7 @@ impl Worker {
         }
     }
 
-    pub fn pack_address(&self) -> Result<WorkerAddress, ucs_status_t> {
+    pub fn pack_address(&self) -> Result<WorkerAddress<'_>, ucs_status_t> {
         let mut address: *mut ucp_address_t = std::ptr::null_mut();
         let mut size: usize = 0;
 
